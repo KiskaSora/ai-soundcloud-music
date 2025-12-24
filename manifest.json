@@ -1,5 +1,5 @@
 {
-    "display_name": "AI SoundCloud Music",
+    "display_name": "🎵 AI SoundCloud Music",
     "loading_order": 10,
     "requires": [],
     "optional": [],
@@ -10,4 +10,5 @@
     "homePage": "https://github.com/KiskaSora/ai-soundcloud-music",
     "description": "Автоматический подбор музыки из SoundCloud по настроению диалога с использованием анализа ключевых слов. Automatic music selection from SoundCloud based on conversation mood using keyword analysis."
 }
+
 
