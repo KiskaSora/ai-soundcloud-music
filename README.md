@@ -33,7 +33,7 @@
 1. Скачайте репозиторий как ZIP
 2. Распакуйте в папку:
    ```
-   SillyTavern/public/scripts/extensions/third-party/ai-soundcloud
+   SillyTavern/public/scripts/extensions/ai-soundcloud
    ```
 3. Перезапустите SillyTavern
 
