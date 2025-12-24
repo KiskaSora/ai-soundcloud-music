@@ -1,0 +1,348 @@
+/* AI SoundCloud Music Extension - Стили для SillyTavern */
+/* С поддержкой плавных переходов (fade) и градиентов темы */
+
+.track-mood {
+    font-size: 0.75em;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, var(--ac-style-color-main, #667eea) 0%, var(--ac-style-color-shadow, #764ba2) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+.track-progress-bar {
+    width: 100%;
+    height: 3px;
+    background: var(--SmartThemeBorderColor, rgba(255, 255, 255, 0.2));
+    border-radius: 2px;
+    margin-top: 8px;
+    overflow: hidden;
+}
+
+.track-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--ac-style-color-main, #667eea) 0%, var(--ac-style-color-shadow, #764ba2) 100%);
+    transition: width 0.3s linear;
+}
+
+.sc-no-art {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--ac-style-color-main, rgba(102, 126, 234, 0.3)) 0%, var(--ac-style-color-shadow, rgba(118, 75, 162, 0.3)) 100%);
+    border-radius: 4px;
+    font-size: 24px;
+}
+
+.sc-controls {
+    display: flex;
+    gap: 4px;
+    flex-direction: row;
+}
+
+/* Кнопки управления плеером - красивые градиенты */
+.sc-player-btn {
+    background: linear-gradient(135deg, var(--ac-style-color-main, rgba(102, 126, 234, 0.2)) 0%, var(--ac-style-color-shadow, rgba(118, 75, 162, 0.2)) 50%, var(--ac-style-color-main, rgba(102, 126, 234, 0.15)) 100%) !important;
+    border: 1px solid var(--ac-style-color-main, rgba(102, 126, 234, 0.5)) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2), 
+                0 0 15px var(--ac-style-color-main, rgba(102, 126, 234, 0.1)) !important;
+    color: var(--SmartThemeBodyColor, #fff) !important;
+    transition: all 0.3s ease !important;
+}
+
+.sc-player-btn:hover {
+    background: linear-gradient(135deg, var(--ac-style-color-main, rgba(102, 126, 234, 0.4)) 0%, var(--ac-style-color-shadow, rgba(118, 75, 162, 0.5)) 50%, var(--ac-style-color-main, rgba(102, 126, 234, 0.3)) 100%) !important;
+    border-color: var(--ac-style-color-shadow, rgba(118, 75, 162, 0.8)) !important;
+    box-shadow: 0 4px 16px var(--ac-style-color-shadow, rgba(102, 126, 234, 0.5)),
+                0 0 25px var(--ac-style-color-main, rgba(102, 126, 234, 0.3)) !important;
+}
+
+.sc-player-btn-play {
+    background: linear-gradient(135deg, var(--ac-style-color-main, #667eea) 0%, var(--ac-style-color-shadow, #764ba2) 50%, var(--ac-style-color-main, #667eea) 100%) !important;
+    box-shadow: 0 4px 12px var(--ac-style-color-shadow, rgba(102, 126, 234, 0.4)),
+                0 0 20px var(--ac-style-color-main, rgba(102, 126, 234, 0.2)) !important;
+}
+
+.sc-player-btn-play:hover {
+    background: linear-gradient(135deg, var(--ac-style-color-shadow, #764ba2) 0%, var(--ac-style-color-main, #667eea) 50%, var(--ac-style-color-shadow, #764ba2) 100%) !important;
+    box-shadow: 0 6px 20px var(--ac-style-color-shadow, rgba(102, 126, 234, 0.6)),
+                0 0 35px var(--ac-style-color-main, rgba(102, 126, 234, 0.4)) !important;
+}
+
+/* Кнопки выбора настроения - многоцветные градиенты */
+.sc-mood-btn {
+    background: linear-gradient(135deg, 
+        var(--ac-style-color-main, rgba(102, 126, 234, 0.2)) 0%, 
+        var(--ac-style-color-shadow, rgba(118, 75, 162, 0.3)) 33%,
+        var(--ac-style-color-main, rgba(102, 126, 234, 0.25)) 66%,
+        var(--ac-style-color-shadow, rgba(118, 75, 162, 0.2)) 100%) !important;
+    border: 1px solid var(--ac-style-color-main, rgba(102, 126, 234, 0.5)) !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1),
+                0 0 12px var(--ac-style-color-main, rgba(102, 126, 234, 0.15)) !important;
+    color: var(--SmartThemeBodyColor, #fff) !important;
+    font-weight: 600 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.sc-mood-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        var(--ac-style-color-main, rgba(102, 126, 234, 0.4)),
+        transparent);
+    transition: left 0.5s ease;
+}
+
+.sc-mood-btn:hover::before {
+    left: 100%;
+}
+
+.sc-mood-btn:hover {
+    background: linear-gradient(135deg, 
+        var(--ac-style-color-main, rgba(102, 126, 234, 0.4)) 0%, 
+        var(--ac-style-color-shadow, rgba(118, 75, 162, 0.6)) 33%,
+        var(--ac-style-color-main, rgba(102, 126, 234, 0.5)) 66%,
+        var(--ac-style-color-shadow, rgba(118, 75, 162, 0.4)) 100%) !important;
+    border-color: var(--ac-style-color-shadow, rgba(118, 75, 162, 0.8)) !important;
+    box-shadow: 0 4px 12px var(--ac-style-color-shadow, rgba(102, 126, 234, 0.4)),
+                0 0 25px var(--ac-style-color-main, rgba(102, 126, 234, 0.3)) !important;
+}
+
+/* Бейдж настроения с анимированным градиентом */
+.sc-player-mood {
+    background: linear-gradient(135deg, 
+        var(--ac-style-color-main, #667eea) 0%, 
+        var(--ac-style-color-shadow, #764ba2) 50%, 
+        var(--ac-style-color-main, #667eea) 100%) !important;
+    background-size: 200% 200% !important;
+    animation: sc-gradient-shift 3s ease infinite !important;
+    box-shadow: 0 2px 8px var(--ac-style-color-shadow, rgba(102, 126, 234, 0.4)),
+                0 0 15px var(--ac-style-color-main, rgba(102, 126, 234, 0.2)) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+@keyframes sc-gradient-shift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Слайдер громкости */
+.sc-player-volume {
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px solid var(--SmartThemeBorderColor, rgba(255, 255, 255, 0.1));
+}
+
+.sc-player-volume-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    font-size: 11px;
+    opacity: 0.8;
+    color: var(--SmartThemeBodyColor, #fff);
+}
+
+.sc-player-volume-slider {
+    width: 100%;
+    height: 4px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: linear-gradient(90deg, 
+        var(--ac-style-color-main, rgba(102, 126, 234, 0.2)) 0%, 
+        var(--ac-style-color-shadow, rgba(118, 75, 162, 0.2)) 100%);
+    border-radius: 2px;
+    outline: none;
+    cursor: pointer;
+}
+
+.sc-player-volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, 
+        var(--ac-style-color-main, #667eea) 0%, 
+        var(--ac-style-color-shadow, #764ba2) 100%);
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4),
+                0 0 10px var(--ac-style-color-main, rgba(102, 126, 234, 0.5));
+    transition: all 0.2s ease;
+}
+
+.sc-player-volume-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.3);
+    box-shadow: 0 4px 12px var(--ac-style-color-shadow, rgba(102, 126, 234, 0.6)),
+                0 0 20px var(--ac-style-color-main, rgba(102, 126, 234, 0.7));
+}
+
+.sc-player-volume-slider::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, 
+        var(--ac-style-color-main, #667eea) 0%, 
+        var(--ac-style-color-shadow, #764ba2) 100%);
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4),
+                0 0 10px var(--ac-style-color-main, rgba(102, 126, 234, 0.5));
+    transition: all 0.2s ease;
+}
+
+.sc-player-volume-slider::-moz-range-thumb:hover {
+    transform: scale(1.3);
+    box-shadow: 0 4px 12px var(--ac-style-color-shadow, rgba(102, 126, 234, 0.6)),
+                0 0 20px var(--ac-style-color-main, rgba(102, 126, 234, 0.7));
+}
+
+/* Прогресс-бар слайдера при перетаскивании */
+.sc-player-volume-slider:active::-webkit-slider-thumb {
+    transform: scale(1.4);
+}
+
+.sc-player-volume-slider:active::-moz-range-thumb {
+    transform: scale(1.4);
+}
+
+/* Индикатор fade-эффекта */
+.sc-fade-indicator {
+    display: inline-block;
+    margin-left: 5px;
+    opacity: 0.7;
+    animation: sc-fade-pulse 1s ease-in-out infinite;
+    filter: drop-shadow(0 0 5px var(--ac-style-color-main, rgba(102, 126, 234, 0.6)));
+}
+
+@keyframes sc-fade-pulse {
+    0%, 100% { 
+        opacity: 0.4;
+        transform: scale(0.9);
+        filter: drop-shadow(0 0 3px var(--ac-style-color-main, rgba(102, 126, 234, 0.4)));
+    }
+    50% { 
+        opacity: 1;
+        transform: scale(1.1);
+        filter: drop-shadow(0 0 8px var(--ac-style-color-shadow, rgba(118, 75, 162, 0.8)));
+    }
+}
+
+/* Плавная анимация для обложки при загрузке */
+.sc-player-artwork {
+    transition: opacity 0.5s ease-in-out;
+    border: 2px solid transparent;
+    background-image: linear-gradient(var(--SmartThemeBlurTintColor, rgba(30, 30, 40, 0.5)), var(--SmartThemeBlurTintColor, rgba(30, 30, 40, 0.5))),
+                      linear-gradient(135deg, var(--ac-style-color-main, #667eea), var(--ac-style-color-shadow, #764ba2));
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+}
+
+.sc-player-artwork.loading {
+    opacity: 0.5;
+    filter: blur(2px);
+}
+
+/* Улучшенная анимация загрузки */
+@keyframes sc-spin {
+    from { 
+        transform: rotate(0deg);
+    }
+    to { 
+        transform: rotate(360deg);
+    }
+}
+
+.sc-player-loading {
+    animation: sc-spin 1s linear infinite;
+    filter: drop-shadow(0 0 8px var(--ac-style-color-main, rgba(102, 126, 234, 0.5)));
+}
+
+/* Плавное появление элементов плеера */
+#soundcloud-player-widget {
+    animation: sc-fade-in 0.5s ease-in-out;
+    border: 1px solid var(--ac-style-color-main, rgba(102, 126, 234, 0.2));
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2),
+                0 0 30px var(--ac-style-color-main, rgba(102, 126, 234, 0.1));
+}
+
+@keyframes sc-fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Прогресс бар с градиентом */
+.sc-player-progress {
+    background: linear-gradient(90deg,
+        var(--ac-style-color-main, rgba(102, 126, 234, 0.1)) 0%,
+        var(--ac-style-color-shadow, rgba(118, 75, 162, 0.1)) 100%);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.sc-player-progress-fill {
+    background: linear-gradient(90deg, 
+        var(--ac-style-color-main, #667eea) 0%, 
+        var(--ac-style-color-shadow, #764ba2) 50%,
+        var(--ac-style-color-main, #667eea) 100%);
+    background-size: 200% 100%;
+    animation: sc-progress-shimmer 2s linear infinite;
+    box-shadow: 0 0 10px var(--ac-style-color-main, rgba(102, 126, 234, 0.6));
+}
+
+@keyframes sc-progress-shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+/* Эффект свечения для иконок в кнопках */
+.sc-player-btn {
+    position: relative;
+}
+
+.sc-player-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--ac-style-color-main, rgba(102, 126, 234, 0.4)) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.sc-player-btn:hover::after {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+}

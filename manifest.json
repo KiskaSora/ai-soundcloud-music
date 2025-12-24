@@ -1,0 +1,12 @@
+{
+    "display_name": "AI SoundCloud Music",
+    "loading_order": 10,
+    "requires": [],
+    "optional": [],
+    "js": "index.js",
+    "css": "style.css",
+    "author": "kiskaSora",
+    "version": "1.0.0",
+    "homePage": "",
+    "description": "Автоматический подбор музыки из SoundCloud по настроению диалога с использованием анализа ключевых слов. Automatic music selection from SoundCloud based on conversation mood using keyword analysis."
+}
